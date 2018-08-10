@@ -4,6 +4,8 @@
     color: #287a41;
     text-decoration: none;
     transition: 0.5s;
+    float: left;
+    margin: 5px 25px;
 }
 .antonLogo:hover{
     text-decoration: none;
@@ -45,4 +47,4 @@ a.antonbutton { /* Old browsers */
     border: none;
     transition: 0.4s;
 }
-a.antonbutton:hover{/*color: #fff;*/ background-position: right center; transition: 0.4s;}
+a.antonbutton:hover{ background-position: right center; transition: 0.4s;}

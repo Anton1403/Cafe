@@ -11,12 +11,13 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    
 </head>
 <body>
+  <a class="mr-5 antonLogo" href="index.html">Antonio's</a>
    <div class="container">
        <nav class="navbar navbar-expand-lg navbar-light ">
        <img src="c" alt="">
-  <a class="mr-5 antonLogo" href="index.html">Antonio's</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -24,11 +25,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
      <li class="nav-item active">
-        <a class="nav-link antonActive" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link antonActive" href="index.html">Home <span class="sr-only">(current)</span></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="order.html">Order</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,8 +46,9 @@
   </div>
 </nav>
    </div>
+   
 
-<div class="container-fluid mt-5" style="background-color: #eee;">
+<div class="container-fluid mt-5" style="background-color: #e7e7e7;">
     <div class="container p-5">
          <div class="card-deck">
             <div class="card text-center" style="width: 20rem;">
@@ -99,5 +101,65 @@
             </div>
         </footer>
     </div>
+    
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+
+  function ground() {
+
+    var tl = new TimelineMax({
+      repeat: -1
+    });
+
+    tl.to("#ground", 20, {
+        backgroundPosition: "1301px 0px",
+        force3D:true,
+        rotation:0.01,
+        z:0.01,
+        autoRound:false,
+        ease: Linear.easeNone
+      });
+
+    return tl;
+  }
+
+  function clouds() {
+
+    var tl = new TimelineMax({
+      repeat: -1
+    });
+
+    tl.to("#clouds", 52, {
+      backgroundPosition: "-2247px bottom",
+      force3D:true,
+      rotation:0.01,
+      z:0.01,
+      //autoRound:false,
+      ease: Linear.easeNone
+    });
+    
+    return tl;
+  }
+
+  var masterTL = new TimelineMax({
+    repeat: -1
+  });
+  
+  // window load event makes sure image is 
+// loaded before running animation
+window.onload = function() {
+  
+  masterTL
+  .add(ground(),0)
+  .add(clouds(),0)
+  .timeScale(0.7)
+  .progress(1).progress(0)
+  .play();
+
+};
+  
+});</script>
+    
 </body>
 </html>
